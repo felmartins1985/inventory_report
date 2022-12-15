@@ -18,4 +18,3 @@ def test_cria_produto():
     assert produto.data_de_validade == "15/12/2023"
     assert produto.numero_de_serie == "123456789"
     assert produto.instrucoes_de_armazenamento == "Armazenar em local seco"
-
