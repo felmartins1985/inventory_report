@@ -26,16 +26,14 @@ class CompleteReport(SimpleReport):
             else:
                 company_item[item["nome_da_empresa"]] = 1
 
-        company_list_item = [
-            f"- {key}: {value}\n" for key, value in company_item.items()
-        ]
+        company_list_item = ""
+        for key, value in company_item.items():
+            company_list_item += f"- {key}: {value}\n"
 
         return (
             f"Data de fabricação mais antiga: {min_year}\n"
             f"Data de validade mais próxima: {closest_date}\n"
             f"Empresa com mais produtos: {company}\n"
             f"Produtos estocados por empresa:\n"
-            f"{company_list_item[0]}"
-            f"{company_list_item[1]}"
-            f"{company_list_item[2]}"
+            f"{company_list_item}"
         )
